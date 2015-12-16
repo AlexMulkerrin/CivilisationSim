@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Civilisation Sim</title>
+	<meta charset="utf-8"/>
+	<script type ="text/javascript" src="JavaScript/Program/Program.js"></script>
+	<script type="text/javascript" src="JavaScript/Control/Control.js"></script>
+
+	<script type="text/javascript" src="JavaScript/Simulation/Simulation.js"></script>
+	<script type="text/javascript" src="JavaScript/Simulation/TerrainGenerator.js"></script>
+
+	<script type ="text/javascript" src="JavaScript/Display/Display.js"></script>
+	<script id="vertShader" type="x-shader/x-vertex">
+		uniform mat4 ProjectionMatrix;
+		uniform mat4 ViewMatrix;
+		uniform mat4 ModelMatrix;
+		uniform mat3 NormalMatrix;
+
+		attribute vec3 position;
+		attribute vec3 colour;
+		attribute vec3 normal;
+
+		varying vec3 vertexColour;
+		varying vec3 vertexNormal;
+
+		void main(void) {
+			gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(position, 1.);
+			vertexColour = colour;
+			vertexNormal = normalize(NormalMatrix * normal);
+		}
+	</script>
+	<script id="fragShader" type="x-shader/x-fragment">
+		precision mediump float;
+
+		uniform vec3 Ambient;
+		uniform vec3 LightColour;
+		uniform vec3 LightDirection;
+
+		varying vec3 vertexColour;
+		varying vec3 vertexNormal;
+
+		void main(void) {
+			float diffuse = max(0.0, dot(vertexNormal, LightDirection));
+			vec3 scatteredLight = Ambient + LightColour*diffuse;
+			vec3 rgb = min(vertexColour.rgb * scatteredLight, vec3(1.0));
+
+			gl_FragColor = vec4(rgb, 1);
+		}
+	</script>
+	<script type="text/javascript" src="JavaScript/Display/Render3D/Render3D.js"></script>
+	<script type="text/javascript" src="JavaScript/Display/Render3D/Scene.js"></script>
+	<script type="text/javascript" src="JavaScript/Display/Render3D/Camera.js"></script>
+	<script type="text/javascript" src="JavaScript/Display/Render3D/MatrixUtilities.js"></script>
+
+</head>
+<body onload="loadProgram()">
+	<canvas id="CivCanvas" style="position:absolute; top:0px; left:0px;">
+		HTML5 canvas goes here
+	</canvas>
+</body>
+</html>
