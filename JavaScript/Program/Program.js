@@ -11,7 +11,11 @@ function Program(canvasName) {
 
 	this.simulation = new Simulation(10,10);
 
-	this.loadMapImage("EarthMapLarge");
+	this.toLoad = 0;
+	this.loaded = 0;
+	this.image = [];
+	this.loadMapImage("EarthMapSmall");
+	//this.loadMapImage("heightmap");
 
 }
 
@@ -21,18 +25,28 @@ Program.prototype.update = function() {
 }
 
 Program.prototype.loadMapImage = function (imageName) {
-	var image = new Image();
-	image.src = "Resources/EarthMapLarge.png";
+
+ 	this.image[this.toLoad] = new Image();
+	this.image[this.toLoad].src = "Resources/"+imageName+".png";
 	var t = this;
-	image.onload = function() {
-		t.simulation.setMapFromImage(image);
-
-		t.display = new Display(t.canvasName, t.simulation);
-		t.control = new Control(t.canvasName, t.simulation, t.display);
-		t.display.linkControl(t.control);
-
-		t.display.update();
-		setInterval(function(){t.update();}, t.refreshDelay);
+	this.image[this.toLoad].onload = function() {
+		t.loaded++;
+		if (t.loaded == t.toLoad) {
+			t.onMapLoaded();
+		}
 	}
-
+	this.toLoad++;
 };
+
+Program.prototype.onMapLoaded = function() {
+	this.simulation.setMapFromImage(this.image[0]);
+	//this.simulation.setElevationFromImage(this.image[1]);
+
+	this.display = new Display(this.canvasName, this.simulation);
+	this.control = new Control(this.canvasName, this.simulation, this.display);
+	this.display.linkControl(this.control);
+
+	this.display.update();
+	var t = this;
+	setInterval(function(){t.update();}, t.refreshDelay);
+}

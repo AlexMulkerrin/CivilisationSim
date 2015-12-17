@@ -33,9 +33,9 @@ Scene.prototype.createElevationSphere = function(longitudeBands, latitudeBands, 
 			var sinPhi = Math.sin(phi);
 			var cosPhi = Math.cos(phi);
 
-			var x = cosPhi * sinTheta;
+			var x = sinPhi * sinTheta;
 			var y = cosTheta;
-			var z = sinPhi * sinTheta;
+			var z = cosPhi * sinTheta;
 
 			var e = this.targetSim.terrain[longNum%longitudeBands][latNum%latitudeBands].elevation;
 			var r = radius*(e*0.1+0.95);

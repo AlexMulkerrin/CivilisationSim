@@ -118,7 +118,7 @@ Display.prototype.drawMap = function() {
 	this.foreground.ctx.fillRect(0, 0, this.targetSim.width*sqSize+2, this.targetSim.height*sqSize+2);
 	for (var i=0; i<this.targetSim.width; i++) {
 		for (var j=0; j<this.targetSim.height; j++) {
-			this.foreground.ctx.fillStyle = biomeStrings[map[(this.targetSim.width-1)-i][j].biome];
+			this.foreground.ctx.fillStyle = biomeStrings[map[i][j].biome];
 			this.foreground.ctx.fillRect(i*sqSize+1, j*sqSize+1, sqSize, sqSize);
 		}
 	}
