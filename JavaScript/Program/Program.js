@@ -2,19 +2,16 @@
 function loadProgram() {
 	var program = new Program("CivCanvas");
 
-	program.display.update();
-	setInterval(function(){program.update();}, program.refreshDelay);
+
 }
 
 function Program(canvasName) {
 	this.refreshDelay = 50;
+	this.canvasName = canvasName;
 
-	this.simulation = new Simulation(360,180);
-	this.display = new Display(canvasName, this.simulation);
-	this.control = new Control(canvasName, this.simulation, this.display);
-	this.display.linkControl(this.control);
+	this.simulation = new Simulation(10,10);
 
-	this.loadMapImage("world map small");
+	this.loadMapImage("EarthMapLarge");
 
 }
 
@@ -25,9 +22,17 @@ Program.prototype.update = function() {
 
 Program.prototype.loadMapImage = function (imageName) {
 	var image = new Image();
-	image.src = "Resources/"+imageName+".png";
+	image.src = "Resources/EarthMapLarge.png";
 	var t = this;
 	image.onload = function() {
 		t.simulation.setMapFromImage(image);
+
+		t.display = new Display(t.canvasName, t.simulation);
+		t.control = new Control(t.canvasName, t.simulation, t.display);
+		t.display.linkControl(t.control);
+
+		t.display.update();
+		setInterval(function(){t.update();}, t.refreshDelay);
 	}
+
 };

@@ -12,8 +12,8 @@ Scene.prototype.createModels = function() {
 	this.model[1] = new Model([25,0,0],[0,0,0]);
 	this.model[1].orbitVector = [0,0,0.01];
 	this.model[1].addCube([0,0,0],[1,0,0],1);
-	this.createHomes();
-	this.createTrees();
+//	this.createHomes();
+//	this.createTrees();
 	this.createStars();
 }
 
@@ -37,14 +37,14 @@ Scene.prototype.createElevationSphere = function(longitudeBands, latitudeBands, 
 			var y = cosTheta;
 			var z = sinPhi * sinTheta;
 
-			var e = this.targetSim.terrain.elevation[longNum%longitudeBands][latNum%latitudeBands];
+			var e = this.targetSim.terrain[longNum%longitudeBands][latNum%latitudeBands].elevation;
 			var r = radius*(e*0.1+0.95);
 
 
 			vertexNormals.push([x,y,z]);
 			vertexPositons.push([x*r, y*r, z*r]);
 			vertexElevations.push(e);
-			vertexOcclusion.push(this.targetSim.terrain.getOcclusion(longNum%longitudeBands, latNum%latitudeBands));
+			vertexOcclusion.push(1);//this.targetSim.terrain.getOcclusion(longNum%longitudeBands, latNum%latitudeBands));
 
 		}
 	}
@@ -67,7 +67,7 @@ Scene.prototype.createElevationSphere = function(longitudeBands, latitudeBands, 
 			norm[3] = vertexNormals[b+1];
 
 			//var colour = [0,Math.random(),0.5];
-			var biome = this.targetSim.terrain.biome[longNum][latNum];
+			var biome = this.targetSim.terrain[longNum][latNum].biome;
 			//var avElevation = vertexElevations[a]+vertexElevations[b]+vertexElevations[a+1]+vertexElevations[b+1]/4;
 			var biomeColour = biomePalette[biome];
 
@@ -118,12 +118,12 @@ Scene.prototype.createTrees = function() {
 	for (var i=0; i<2000; i++) {
 		var longNum = Math.floor(Math.random() * this.targetSim.width);
 		var latNum = Math.floor(Math.random() * this.targetSim.height);
-		if (this.targetSim.terrain.biome[longNum][latNum] == biomeID.hill) {
+		if (this.targetSim.terrain[longNum][latNum].biome == biomeID.hill) {
 
 			var theta = latNum*Math.PI / this.targetSim.height;
 			var phi = longNum*2*Math.PI / this.targetSim.width;
 
-			var e = this.targetSim.terrain.elevation[longNum][latNum];
+			var e = this.targetSim.terrain[longNum][latNum].elevation;
 			var r = 20*(e*0.1+0.95);
 
 			var x = Math.cos(phi) * Math.sin(theta);
@@ -149,12 +149,12 @@ Scene.prototype.createHomes = function() {
 	for (var i=0; i<100; i++) {
 		var longNum = Math.floor(Math.random() * this.targetSim.width);
 		var latNum = Math.floor(Math.random() * this.targetSim.height);
-		if (this.targetSim.terrain.biome[longNum][latNum] == biomeID.grass) {
+		if (this.targetSim.terrain[longNum][latNum].biome == biomeID.grass) {
 
 			var theta = latNum*Math.PI / this.targetSim.height;
 			var phi = longNum*2*Math.PI / this.targetSim.width;
 
-			var e = this.targetSim.terrain.elevation[longNum][latNum];
+			var e = this.targetSim.terrain[longNum][latNum].elevation;
 			var r = 20*(e*0.1+0.95);
 
 			var x = Math.cos(phi) * Math.sin(theta);

@@ -1,12 +1,13 @@
-const biomeID = { rock:0, ocean:1, coast:2, beach:3, grass:4, hill:5,mountain:6, plain:7, desert:8, tundra:9, ice:10};
+const biomeID = { 		rock:0, ocean:1, coast:2, beach:3, grass:4,
+						hill:5, mountain:6, plain:7, desert:8, tundra:9,
+						ice:10, river:11, forest:12, jungle:13, swamp:14};
 
-const biomeStrings = ["#7F7F7F","#00007f","#59C9FF", "#FFFFD1", "#267F00",
-						"#203805", "#ffdd00", "#eecc00", "#ddcccc", "#ffffff",  "#ffffff"
+const biomeStrings = [	"#7f7f7f","#4d6df3","#59c9ff", "#ffffd1", "#00ca00",
+						"#787878", "#dcdcdc", "#fff200", "#fff9bd", "#9c5a3c",
+						"#ffffff", "#99d9ea", "#008000", "#6f3198", "#00d96c"
 					];
 
-var biomePalette = [[0.3,0.3,0.3],[0,0,0.5],[0.1,0.1,1],[0.5,0.5,0.5],[0.5,0.5,0.5],
-						[0.5,0.5,0.5],[0.5,0.5,0.5],[0.5,0.5,0.5],[0.5,0.5,0.5],[0.5,0.5,0.5], [1,1,1]
-];
+var biomePalette = [];
 
 function Display(canvasName, simulation) {
 	this.targetSim = simulation;
@@ -117,7 +118,7 @@ Display.prototype.drawMap = function() {
 	this.foreground.ctx.fillRect(0, 0, this.targetSim.width*sqSize+2, this.targetSim.height*sqSize+2);
 	for (var i=0; i<this.targetSim.width; i++) {
 		for (var j=0; j<this.targetSim.height; j++) {
-			this.foreground.ctx.fillStyle = biomeStrings[map.biome[(this.targetSim.width-1)-i][j]];
+			this.foreground.ctx.fillStyle = biomeStrings[map[(this.targetSim.width-1)-i][j].biome];
 			this.foreground.ctx.fillRect(i*sqSize+1, j*sqSize+1, sqSize, sqSize);
 		}
 	}
@@ -132,4 +133,15 @@ function colourComponents(colour) {
 		components[i]=parseInt(string,16)/255;
 	}
 	return components;
+}
+
+function toRGBString(red, green, blue) {
+    var colourString = '#';
+    if (red < 16) colourString += '0';
+    colourString += red.toString(16);
+    if (green < 16) colourString += '0';
+    colourString += green.toString(16);
+    if (blue < 16) colourString += '0';
+    colourString += blue.toString(16);
+    return colourString;
 }
