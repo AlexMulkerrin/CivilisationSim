@@ -115,9 +115,7 @@ Render3D.prototype.createBuffers= function() {
 
 Render3D.prototype.update = function() {
 	this.camera.update();
-	for (var i=0; i<this.scene.model.length; i++) {
-		this.scene.model[i].update();
-	}
+	this.scene.update();
 	this.drawScene();
 }
 

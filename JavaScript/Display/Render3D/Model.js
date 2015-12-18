@@ -1,4 +1,4 @@
-function Model(positionVector, rotationVector) {
+function Model(positionVector, rotationVector, isUnitModel, unitID) {
 	this.totalVerticies = 0;
 	this.vertexArray = [];
 	this.modelMatrix = identityMatrix4();
@@ -20,11 +20,26 @@ function Model(positionVector, rotationVector) {
 	this.normalMatrix = emptyMatrix3();
 	this.normalMatrix = mat4toInverseMat3(this.modelMatrix, this.normalMatrix);
 	this.normalMatrix = mat3transpose(this.normalMatrix);
+
+	if (isUnitModel) {
+		this.isUnitModel = true;
+		this.unitID = unitID;
+	} else {
+		this.isUnitModel = false;
+	}
 }
 
 Model.prototype.update = function() {
 	//this.updateRotation();
 	//this.updateOrbit();
+}
+
+Model.prototype.setPosition = function(x, y, z) {
+	this.modelMatrix = translateMatrix4(this.modelMatrix, -this.x, -this.y, -this.z);
+	this.x = x;
+	this.y = y;
+	this.z = z;
+	this.modelMatrix = translateMatrix4(this.modelMatrix, this.x, this.y, this.z);
 }
 
 Model.prototype.updateRotation = function() {

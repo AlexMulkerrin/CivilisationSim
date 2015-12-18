@@ -2,25 +2,21 @@ function Scene(simulation) {
 	this.targetSim = simulation;
 
 	this.model = [];
+	this.nextIndex = 0;
 }
 
 Scene.prototype.createModels = function() {
-	this.model[0] = new Model([0,0,0],[0,0,0]);
 	this.createElevationSphere(this.targetSim.terrain.width,this.targetSim.terrain.height,20);
-	this.model[1] = new Model([25,0,0],[0,0,0]);
-	this.model[1].orbitVector = [0,0,0.01];
-	this.model[1].addCube([0,0,0],[1,0,0],1);
-
-
-	this.createHomes();
+	this.modelUnits();
 //	this.createTrees();
 	this.createStars();
-
 	this.createOceanSphere();
 
 }
 
 Scene.prototype.createElevationSphere = function(longitudeBands, latitudeBands, radius) {
+	this.model[this.nextIndex] = new Model([0,0,0],[0,0,0]);
+
 	var vertexPositons = [];
 	var vertexElevations = [];
 	var map = this.targetSim.terrain.tile;
@@ -75,12 +71,12 @@ Scene.prototype.createElevationSphere = function(longitudeBands, latitudeBands, 
 				var r = 1 + e/50;
 				pos[4] = [midX*r, midY*r, midZ*r];
 
-				this.model[0].addPyramid(pos, colour);
+				this.model[this.nextIndex].addPyramid(pos, colour);
 			} else {
 				if (vertexElevations[a] == vertexElevations[b+1]) {
-					this.model[0].addQuad(pos, colour, false);
+					this.model[this.nextIndex].addQuad(pos, colour, false);
 				} else {
-					this.model[0].addQuad(pos, colour, true);
+					this.model[this.nextIndex].addQuad(pos, colour, true);
 				}
 			}
 		}
@@ -183,5 +179,53 @@ Scene.prototype.createHomes = function() {
 			this.model[indexOffset].addCube([0,0,0], colour,0.2);
 			indexOffset++;
 		//}
+	}
+}
+
+
+Scene.prototype.modelUnits = function() {
+	var theta, phi;
+	var x,y,z;
+	var e, r, colour, position;
+	var index = this.model.length;
+	var s = this.targetSim;
+	for (var i=0; i<s.unit.length; i++) {
+
+		theta = (s.unit[i].x+0.5)*2*Math.PI / s.terrain.width;
+		phi = (s.unit[i].y+0.5)*Math.PI / s.terrain.height;
+
+		e = s.terrain.tile[s.unit[i].x][s.unit[i].y].elevation;
+		r = 20*(1+e/50);
+
+		x = Math.sin(theta) * Math.sin(phi);
+		y = Math.cos(phi);
+		z = Math.cos(theta) * Math.sin(phi);
+		colour = [1,0,1];
+
+		position = [x*r, y*r, z*r];
+		this.model[index] = new Model(position, [0,0,0], true, i);
+		this.model[index].addCube([0,0,0], colour, 0.2);
+		index++;
+
+	}
+}
+
+Scene.prototype.update = function() {
+	var s = this.targetSim;
+	for (var i=0; i<this.model.length; i++) {
+		if(this.model[i].isUnitModel) {
+			var index = this.model[i].unitID;
+			var theta = (s.unit[index].x+0.5)*2*Math.PI / s.terrain.width;
+			var phi = (s.unit[index].y+0.5)*Math.PI / s.terrain.height;
+
+			e = s.terrain.tile[s.unit[index].x][s.unit[index].y].elevation;
+			r = 20*(1+e/50);
+
+			x = Math.sin(theta) * Math.sin(phi);
+			y = Math.cos(phi);
+			z = Math.cos(theta) * Math.sin(phi);
+
+			this.model[i].setPosition(x*r, y*r, z*r)
+		}
 	}
 }

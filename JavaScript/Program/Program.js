@@ -20,6 +20,7 @@ function Program(canvasName) {
 }
 
 Program.prototype.update = function() {
+	this.simulation.update();
 	this.display.update();
 	this.control.mouse.isReleased = false;
 }
@@ -40,7 +41,7 @@ Program.prototype.loadMapImage = function (imageName) {
 
 Program.prototype.onMapLoaded = function() {
 	this.simulation.terrain.setFromImage(this.image[0]);
-	//this.simulation.setElevationFromImage(this.image[1]);
+	this.simulation.createSettlers(20);
 
 	this.display = new Display(this.canvasName, this.simulation);
 	this.control = new Control(this.canvasName, this.simulation, this.display);

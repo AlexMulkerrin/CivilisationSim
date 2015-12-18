@@ -61,7 +61,7 @@ Display.prototype.update = function() {
 	this.clearCanvas();
 	this.render3D.update();
 	this.ctx.drawImage(this.render3D.canvas,0,0);
-	//this.drawInterface();
+	this.drawInterface();
 	//this.drawMap();
 	this.drawForeground();
 }
@@ -96,14 +96,7 @@ Display.prototype.updateBackground = function() {
 
 Display.prototype.drawInterface = function() {
 	this.ctx.fillStyle = "#ffffff";
-	this.ctx.fillText("total verticies: "+this.render3D.scene.totalVerticies, 5,12);
-	this.ctx.fillText("mouse: "+this.targetControl.mouse.x+","+this.targetControl.mouse.y, 5,24);
-
-	var ang = this.render3D.camera.getCoordBelow();
-	var y = ang[0] *this.targetSim.height / Math.PI;
-	var x = ang[1] *this.targetSim.width / (Math.PI*2);
-
-	this.ctx.fillText("camera: "+x+","+y, 5,36);
+	this.ctx.fillText("Turn: "+this.targetSim.turn, 5,120);
 
 }
 

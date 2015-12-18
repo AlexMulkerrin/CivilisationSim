@@ -127,6 +127,17 @@ Terrain.prototype.getCoastElevation = function(x,y) {
 	return this.tile[x][y].elevation
 }
 
+Terrain.prototype.getLandTile = function() {
+	var x,y;
+	var found = biomeID.ocean;
+	while (found == biomeID.ocean || found == biomeID.coast) {
+		x = Math.floor(Math.random()*this.width);
+		y = Math.floor(Math.random()*this.height);
+		found = this.tile[x][y].biome;
+	}
+	return [x, y];
+}
+
 // Tile Class
 function Tile() {
 	this.elevation = 0;
