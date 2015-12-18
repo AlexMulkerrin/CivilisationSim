@@ -39,7 +39,7 @@ Program.prototype.loadMapImage = function (imageName) {
 };
 
 Program.prototype.onMapLoaded = function() {
-	this.simulation.setMapFromImage(this.image[0]);
+	this.simulation.terrain.setFromImage(this.image[0]);
 	//this.simulation.setElevationFromImage(this.image[1]);
 
 	this.display = new Display(this.canvasName, this.simulation);

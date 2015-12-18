@@ -12,6 +12,11 @@ function Render3D(simulation) {
 	this.gl.viewport(0, 0, this.canvas.width, this.canvas.height);
 	this.gl.clearColor(0.0, 0.0, 0.0, 0.0);
 
+	// allow transparency
+	this.gl.enable(this.gl.DEPTH_TEST);
+	this.gl.depthFunc(this.gl.LEQUAL);
+	this.gl.blendFunc(this.gl.SRC_ALPHA, this.gl.ONE);
+
 	this.camera = new Camera();
 
 	this.initialise();
@@ -132,7 +137,7 @@ Render3D.prototype.drawScene = function() {
 	gl.uniform3fv(p.lightColour, [1.0,1.0,1.0]);
 	gl.uniform3fv(p.lightDirection, [-0.5,0.5,1.0]);
 
-	for (var i=0; i<this.scene.model.length; i++) {
+	for (var i=0; i<this.scene.model.length-1; i++) {
 		gl.bindBuffer(gl.ARRAY_BUFFER, this.arrayBufferObjectID[i]);
 
 		gl.uniformMatrix4fv(p.modelMatrix, false, this.scene.model[i].modelMatrix);
@@ -145,6 +150,22 @@ Render3D.prototype.drawScene = function() {
 
 		gl.drawArrays(gl.TRIANGLES, 0, this.scene.model[i].totalVerticies);
 	}
+
+	var transparent = this.scene.model.length-1;
+	//gl.disable(gl.DEPTH_TEST);
+	gl.enable(gl.BLEND);
+
+	gl.bindBuffer(gl.ARRAY_BUFFER, this.arrayBufferObjectID[transparent]);
+
+	gl.uniformMatrix4fv(p.modelMatrix, false, this.scene.model[transparent].modelMatrix);
+	gl.vertexAttribPointer(this.pointer.vertexPosition, 3, gl.FLOAT, false, 4*9, 0);
+	gl.vertexAttribPointer(this.pointer.vertexColour, 3, gl.FLOAT, false, 4*9, 4*3);
+	gl.vertexAttribPointer(this.pointer.vertexNormal, 3, gl.FLOAT, false, 4*9, 4*6);
+
+	gl.drawArrays(gl.TRIANGLES, 0, this.scene.model[transparent].totalVerticies);
+
+	gl.disable(gl.BLEND);
+	//gl.enable(gl.DEPTH_TEST);
 
 	gl.flush();
 }

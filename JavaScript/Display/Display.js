@@ -85,7 +85,7 @@ Display.prototype.updateBackground = function() {
 	var midX = this.background.width/2;
 	var midY = this.background.height/2;
 	this.background.gradient = this.background.ctx.createRadialGradient(midX,midY,size,midX,midY,size+50);
-	this.background.gradient.addColorStop(0, "#35CCFF");
+	//this.background.gradient.addColorStop(0, "#35CCFF");
 	this.background.gradient.addColorStop(1, "black");
 
 	this.background.ctx.fillStyle = "#000000";
@@ -115,10 +115,10 @@ Display.prototype.drawMap = function() {
 	var sqSize=1;
 	var map = this.targetSim.terrain;
 	this.foreground.ctx.fillStyle = "#ffffff";
-	this.foreground.ctx.fillRect(0, 0, this.targetSim.width*sqSize+2, this.targetSim.height*sqSize+2);
-	for (var i=0; i<this.targetSim.width; i++) {
-		for (var j=0; j<this.targetSim.height; j++) {
-			this.foreground.ctx.fillStyle = biomeStrings[map[i][j].biome];
+	this.foreground.ctx.fillRect(0, 0, map.width*sqSize+2, map.height*sqSize+2);
+	for (var i=0; i<map.width; i++) {
+		for (var j=0; j<map.height; j++) {
+			this.foreground.ctx.fillStyle = biomeStrings[map.tile[i][j].biome];
 			this.foreground.ctx.fillRect(i*sqSize+1, j*sqSize+1, sqSize, sqSize);
 		}
 	}
