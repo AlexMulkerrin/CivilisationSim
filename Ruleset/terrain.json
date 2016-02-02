@@ -1,0 +1,39 @@
+{
+	"base":[
+	{"name":"Arctic", "food":0, "prod":0, "trade":0, "move":2, "defence":0, "irrigation":0, "mine":0, "road":0, "resource":"Seals"},
+	{"name":"Desert", "food":0, "prod":1, "trade":0, "move":2, "defence":0, "irrigation":1, "mine":1, "road":1, "resource":"Oasis"},
+	{"name":"Forest", "food":1, "prod":2, "trade":0, "move":1, "defence":0.5, "irrigation":"Plains", "mine":0, "road":0, "resource":"Game"},
+	{"name":"Grasslands", "food":2, "prod":0, "trade":0, "move":1, "defence":0, "irrigation":1, "mine":"Forest", "road":1, "resource":"Shield"},
+	{"name":"Hills", "food":1, "prod":0, "trade":0, "move":2, "defence":1, "irrigation":2, "mine":3, "road":0, "resource":"Coal"},
+	{"name":"Jungle", "food":1, "prod":0, "trade":0, "move":2, "defence":0.5, "irrigation":"Grasslands", "mine":"Forest", "road":0, "resource":"Gems"},
+	{"name":"Mountains", "food":0, "prod":1, "trade":0, "move":3, "defence":2, "irrigation":0, "mine":1, "road":0, "resource":"Gold"},
+	{"name":"Ocean", "food":1, "prod":0, "trade":2, "move":1, "defence":0, "irrigation":0, "mine":0, "road":0, "resource":"Fish"},
+	{"name":"Plains", "food":1, "prod":1, "trade":0, "move":1, "defence":0, "irrigation":1, "mine":"Forest", "road":1, "resource":"Horses"},
+	{"name":"River", "food":2, "prod":0, "trade":1, "move":1, "defence":0.5, "irrigation":1, "mine":0, "road":0, "resource":"Shield"},
+	{"name":"Swamp", "food":1, "prod":0, "trade":0, "move":2, "defence":0.5, "irrigation":"Grasslands", "mine":"Forest", "road":0, "resource":"Oil"},
+	{"name":"Tundra", "food":1, "prod":0, "trade":0, "move":1, "defence":0, "irrigation":0, "mine":0, "road":0, "resource":"Reindeer"}
+	],
+	
+	"resource":[
+	{"name":"Coal", "food":0, "prod":2, "trade":0},
+	{"name":"Fish", "food":2, "prod":0, "trade":0},
+	{"name":"Game", "food":1, "prod":0, "trade":0},
+	{"name":"Reindeer", "food":2, "prod":0, "trade":0},
+	{"name":"Gems", "food":0, "prod":0, "trade":4},
+	{"name":"Gold", "food":0, "prod":0, "trade":6},
+	{"name":"Horses", "food":0, "prod":2, "trade":0},
+	{"name":"Oasis", "food":3, "prod":0, "trade":0},
+	{"name":"Oil", "food":0, "prod":4, "trade":0},
+	{"name":"Seals", "food":2, "prod":0, "trade":0},
+	{"name":"Shield", "food":0, "prod":1, "trade":0}
+	],
+	
+	"improvement":[
+	{"name":"Irrigation", "cost":4, "effect":"spreads water"},
+	{"name":"Mine", "cost":4},
+	{"name":"Road", "cost":2, "effect":"0.5 movement cost"},
+	{"name":"Railroad", "cost":2, "effect":["no movement","50% yield"], "required advance":"railroad"},
+	{"name":"Fortress", "cost":4, "effect":["more defence","no attrition"], "required advance":"construction"},
+	{"name":"Pollution", "cost":4, "effect":"no yield"}
+	]
+}

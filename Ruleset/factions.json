@@ -1,0 +1,48 @@
+[
+	{"name":"America", "leader":"Abraham Lincoln", "aggression":0, "development":1, "militarism":0, "colour":"cyan", "cities":[
+		"Washington", "New York", "Boston", "Philadelphia", "Atlanta", "Chicago", "Buffalo", "St. Louis", "Detroit", "New Orleans", "Baltimore", "Denver", "Cincinnati", "Dallas", "LasAngeles", "LasVegas"
+	]},
+	{"name":"Aztec", "leader":"Montezuma", "aggression":1, "development":0, "militarism":0, "colour":"yellow", "cities":[
+		"Tenochtitlan", "Chiauhtia", "Chapultapec", "Coatepec", "Ayontzinco", "Itzapalapa", "Itzapam", "Mitxcoac", "Tucubaya", "Tecamac", "Tepezinco", "Ticoman", "Tlaxcala", "Xaltocan", "Xicalango", "Zumpanco"
+	]},
+	{"name":"Babylon", "leader":"Hammurabi", "aggression":0, "development":0, "militarism":0, "colour":"green",  "cities":[
+		"Babylon", "Sumer", "Uruk", "Ninevah", "Ashur", "Ellipi", "Akkad", "Eridu", "Kish", "Nippur", "Shuruppak", "Zariqum", "Izibia", "Nimrud", "Arbela", "Zamua"
+	]},
+	{"name":"China", "leader":"Mao Tse-Tung", "aggression":1, "development":1, "militarism":0, "colour":"cyan", "cities":[
+		"Peking", "Shanghai", "Canton", "Nanking", "Tsingtao", "Hangchow", "Tientsin", "Tatung", "Macao", "Anyang", "Shantung", "Chinan", "Kaifeng", "Ningpo", "Paoting", "Yangchow"
+	]},
+	{"name":"Egypt", "leader":"Ramesses II", "aggression":1, "development":1, "militarism":0, "colour":"yellow", "cities":[
+		"Thebes", "Memphis", "Oryx", "Heliopolis", "Gaza", "Alexandria", "Byblos", "Cairo", "Coptos", "Edfu", "Pithom", "Busirus", "Athribus", "Mendes", "Tanis", "Abydos"
+	]},
+	{"name":"England", "leader":"Elizabeth I", "aggression":1, "development":2, "militarism":1, "colour":"pink", "cities":[
+		"London", "Coventry", "Birmingham", "Dover", "Nottingham", "York", "Liverpool", "Brighton", "Oxford", "Reading", "Exeter", "Cambridge", "Hastings", "Canterbury", "Banbury", "Newcastle"
+	]},
+	{"name":"France", "leader":"Napoleon Bonaparte", "aggression":2, "development":2, "militarism":0, "colour":"blue", "cities":[
+		"Paris", "Orleans", "Lyons", "Tours", "Chartres", "Bordeaux", "Rouen", "Avignon", "Marseilles", "Grenoble", "Dijon", "Amiens", "Cherbourg", "Poitiers", "Toulouse", "Bayonne"
+	]},
+	{"name":"German", "leader":"Frederick the Great", "aggression":2, "development":0, "militarism":0, "colour":"blue", "cities":[
+		"Berlin", "Leipzig", "Hamburg", "Bremen", "Frankfurt", "Bonn", "Nuremberg", "Cologne", "Hannover", "Munich", "Stuttgart", "Heidelburg", "Salzburg", "Konigsberg", "Dortmond", "Brandenburg"
+	]},
+	{"name":"Greece", "leader":"Alexander the Great", "aggression":1, "development":2, "militarism":2, "colour":"pink", "cities":[
+		"Athens", "Sparta", "Corinth", "Delphi", "Eretria", "Pharsalos", "Argos", "Mycenae", "Herakleia", "Antioch", "Ephesos", "Rhodes", "Knossos", "Troy", "Pergamon", "Miletos"
+	]},
+	{"name":"India", "leader":"Mahatma Karamachand Gandhi", "aggression":0, "development":0, "militarism":1, "colour":"black", "cities":[
+		"Delhi", "Bombay", "Madras", "Bangalore", "Calcutta", "Lahore", "Karachi", "Kolhapur", "Jaipur", "Hyderbad", "Bengal", "Chittagong", "Punjab", "Dacca", "Indus", "Ganges"
+	]},
+	{"name":"Mongolia", "leader":"Genghis Khan", "aggression":2, "development":2, "militarism":2, "colour":"black", "cities":[
+		"Samarkand", "Bokhara", "Nishapur", "Karakorum", "Kashgar", "Tabriz", "Aleppo", "Kabul", "Ormuz", "Basra", "Khanbalyk", "Khorasan", "Shangtu", "Kazan", "Quinsay", "Kerman"
+	]},
+	{"name":"Rome", "leader":"Julius Caesar", "aggression":1, "development":2, "militarism":0, "colour":"white", "cities":[
+		"Rome", "Caesarea", "Cathage", "Nicopolis", "Byzantium", "Brundisium", "Syracuse", "Antioch", "Palmyra", "Cyrene", "Gordion", "Tyrus", "Jerusalem", "Seleucia", "Ravenna", "Artaxata"
+	]},
+	{"name":"Russia", "leader":"Josef Stalin", "aggression":2, "development":1, "militarism":2, "colour":"white", "cities":[
+		"Moscow", "Leningrad", "Kiev", "Minsk", "Smolensk", "Odessa", "Sevastopol", "Tblisi", "Sverdlovsk", "Yakutsk", "Vladivostok", "Novograd", "Krasnoyarsk", "Riga", "Rostov", "Atrakhan"
+	]},
+	{"name":"Zululand", "leader":"Shaka", "aggression":2, "development":1, "militarism":1, "colour":"green", "cities":[
+		"Zimbabwe", "Ulundi", "Bapedi", "Hlobane", "Isandhlwala", "Intombe", "Mpondo", "Ngome", "Swarzi", "Tugela", "Umtata", "Umfolozi", "Ibabanago", "Isipezi", "Amatikulu", "Zunquin"
+	]},
+	
+	{"name":"Barbarian", "leader":"Attila the Hun", "aggression":999, "development":999, "militarism":999, "colour":"red", "cities":[
+		"Mecca", "Naples", "Sidon", "Tyre", "Tarsus", "Issus", "Cunaxa", "Cremona", "Cannae", "Capua", "Turin", "Genoa", "Utica", "Crete", "Damascus", "Verona", "Salamis", "Lisbon", "Hamburg", "Prague", "Salzburg", "Bergen", "Venice", "Milan", "Ghent", "Pisa", "Cordoba", "Seville", "Dublin", "Toronto", "Melbourne", "Sydney"
+	]}
+]

@@ -1,0 +1,32 @@
+[
+	{"name":"Armour", "attack":10, "defence":5, "move":3, "cost":80, "locomotion":"land", "special":"multi-attack", "required advance":"automobile"},		
+	{"name":"Artillery", "attack":12, "defence":2, "move":2, "cost":60, "locomotion":"land", "special":"ignores walls", "required advance":"robotics"},		
+	{"name":"Cannon", "attack":8, "defence":1, "move":1, "cost":40, "locomotion":"land", "special":"none", "required advance":"metallurgy", "obsoleted":"robotics"},		
+	{"name":"Caravan", "attack":0, "defence":1, "move":1, "cost":50, "locomotion":"land", "special":"trader", "required advance":"trade"},		
+	{"name":"Catapult", "attack":6, "defence":1, "move":1, "cost":40, "locomotion":"land", "special":"none", "required advance":"mathematics"},		
+	{"name":"Cavalry", "attack":2, "defence":1, "move":2, "cost":20, "locomotion":"land", "special":"none", "required advance":"horseback riding"},		
+	{"name":"Chariot", "attack":4, "defence":1, "move":2, "cost":40, "locomotion":"land", "special":"none", "required advance":"the wheel", "obsoleted":"chivalry"},		
+	{"name":"Diplomat", "attack":0, "defence":0, "move":2, "cost":30, "locomotion":"land", "special":"diplomacy", "required advance":"writing"},		
+	{"name":"Knights", "attack":4, "defence":2, "move":2, "cost":40, "locomotion":"land", "special":"none", "required advance":"chivalry", "obsoleted":"automobile"},		
+	{"name":"Legion", "attack":3, "defence":1, "move":1, "cost":20, "locomotion":"land", "special":"none", "required advance":"iron working", "obsoleted":"conscription"},		
+	{"name":"Mech. Inf.", "attack":6, "defence":6, "move":3, "cost":50, "locomotion":"land", "special":"none", "required advance":"labour union"},		
+	{"name":"Militia", "attack":1, "defence":1, "move":1, "cost":10, "locomotion":"land", "special":"none", "required advance":"none", "obsoleted":"gunpowder"},		
+	{"name":"Musketeers", "attack":2, "defence":1, "move":1, "cost":30, "locomotion":"land", "special":"none", "required advance":"gunpowder", "obsoleted":"conscription"},		
+	{"name":"Phalanx", "attack":1, "defence":1, "move":1, "cost":20, "locomotion":"land", "special":"none", "required advance":"bronze working", "obsoleted":"gunpowder"},		
+	{"name":"Riflemen", "attack":3, "defence":1, "move":1, "cost":30, "locomotion":"land", "special":"none", "required advance":"conscription"},		
+	{"name":"Settlers", "attack":0, "defence":1, "move":1, "cost":40, "locomotion":"land", "special":"settling", "required advance":"none"},
+	
+	{"name":"Battleship", "attack":18, "defence":12, "move":4, "cost":160, "locomotion":"sea", "special":"none", "vision":2, "required advance":"steel"},		
+	{"name":"Carrier", "attack":1, "defence":12, "move":5, "cost":160, "locomotion":"sea", "special":"carries air only", "vision":2, "carry":8, "required advance":"advanced flight"},		
+	{"name":"Cruiser", "attack":6, "defence":6, "move":6, "cost":160, "locomotion":"sea", "special":"none", "vision":2, "required advance":"combustion"},		
+	{"name":"Frigate", "attack":2, "defence":2, "move":3, "cost":80, "locomotion":"sea", "special":"none", "carry":4, "required advance":"magnetism", "obsoleted":"industrialisation"},		
+	{"name":"Ironclad", "attack":4, "defence":4, "move":4, "cost":60, "locomotion":"sea", "special":"none", "required advance":"steam engine", "obsoleted":"combustion"},		
+	{"name":"Sail", "attack":1, "defence":1, "move":3, "cost":40, "locomotion":"sea", "special":"none", "carry":3, "required advance":"navigation", "obsoleted":"magnetism"},		
+	{"name":"Submarine", "attack":8, "defence":2, "move":3, "cost":50, "locomotion":"sea", "special":"stealth", "vision":2, "required advance":"mass production"},		
+	{"name":"Transport", "attack":0, "defence":3, "move":4, "cost":50, "locomotion":"sea", "special":"none", "carry":8, "required advance":"industrialisation"},		
+	{"name":"Trireme", "attack":1, "defence":0, "move":3, "cost":40, "locomotion":"sea", "special":"sinks", "carry":2,  "required advance":"map making", "obsoleted":"navigation"},
+			
+	{"name":"Bomber", "attack":12, "defence":1, "move":8, "cost":120, "locomotion":"air", "special":["ignores walls","extra fuel"], "vision":2, "required advance":"advanced flight"},		
+	{"name":"Fighter", "attack":1, "defence":2, "move":10, "cost":60, "locomotion":"air", "special":"limited fuel", "required advance":"flight"},		
+	{"name":"Nuclear", "attack":1, "defence":0, "move":16, "cost":160, "locomotion":"air", "special":"nuclear explosion", "required advance":"rocketry", "required wonder":"manhattan project"}
+]

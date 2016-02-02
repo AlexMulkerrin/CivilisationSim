@@ -280,7 +280,6 @@ PerlinNoise.prototype.lerp = function(t, a, b) {
 	return a + t * (b - a);
 }
 
-
 function grad3(hash, x, y, z) {
 	var h = hash & 15;     // Convert low 4 bits of hash code into 12 simple
 	var u = h<8 ? x : y; // gradient directions, and compute dot product.

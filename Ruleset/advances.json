@@ -1,0 +1,87 @@
+[
+	{"name":"advanced flight", "requires":["flight","electricity"]},
+	{"name":"alphabet", "requires":"none"},
+	{"name":"astronomy", "requires":["mysticism","mathematics"]},
+	{"name":"atomic theory", "requires":["theory of gravity","physics"]},
+	{"name":"automobile", "requires":["combustion","steel"]},
+	
+	{"name":"banking", "requires":["trade","the republic"]},
+	{"name":"bridge building", "requires":["iron working","alphabet"]},
+	{"name":"bronze working", "requires":"none"},
+	
+	{"name":"ceremonial burial", "requires":"none"},
+	{"name":"chemistry", "requires":["university","medicine"]},
+	{"name":"chivalry", "requires":["feudalism","horseback riding"]},
+	{"name":"code of laws", "requires":"alphabet"},
+	{"name":"combustion", "requires":["refining","explosives"]},
+	{"name":"communism", "requires":["philosophy","industrialisation"]},
+	{"name":"computers", "requires":["mathematics","electronics"]},
+	{"name":"conscription", "requires":["the republic","explosives"]},
+	{"name":"construction", "requires":["masonry","currency"]},
+	{"name":"the corporation", "requires":["banking","industrialisation"]},
+	{"name":"currency", "requires":"bronze working"},
+	
+	{"name":"democracy", "requires":["philosophy","literacy"]},
+	
+	{"name":"electricity", "requires":["magnetism","metallurgy"]},
+	{"name":"electronics", "requires":"electricity"},
+	{"name":"engineering", "requires":["the wheel","construction"]},
+	{"name":"explosives", "requires":["gunpowder","chemistry"]},
+	
+	{"name":"feudalism", "requires":["masonry","monarchy"]},
+	{"name":"flight", "requires":["combustion","physics"]},
+	{"name":"fusion power", "requires":["nuclear power","superconductor"]},
+	{"name":"future tech", "requires":"fusion power", "special":"repeats"},
+	
+	{"name":"genetic engineering", "requires":["medicine","the corporation"]},
+	{"name":"gunpowder", "requires":["invention","iron working"]},
+	
+	{"name":"horseback riding", "requires":"none"},
+	
+	{"name":"industrialisation", "requires":["railroad","banking"]},
+	{"name":"invention", "requires":["engineering","literacy"]},
+	{"name":"iron working", "requires":"bronze working"},
+	
+	{"name":"labour union", "requires":["mass production","communism"]},
+	{"name":"literacy", "requires":["writing","code of laws"]},
+	
+	{"name":"magnetism", "requires":["navigation","physics"]},
+	{"name":"map making", "requires":"alphabet"},
+	{"name":"masonry", "requires":"none"},
+	{"name":"mass production", "requires":["automobile","the corporation"]},
+	{"name":"mathematics", "requires":["alphabet","masonry"]},
+	{"name":"medicine", "requires":["philosophy","trade"]},
+	{"name":"metallurgy", "requires":["gunpowder","university"]},
+	{"name":"monarchy", "requires":["ceremonial burial","code of laws"]},
+	{"name":"mysticism", "requires":"ceremonial burial", "special":"1 extra happy from temple"},
+	
+	{"name":"navigation", "requires":["map making","astronomy"]},
+	{"name":"nuclear fission", "requires":["mass production","atomic theory"]},
+	{"name":"nuclear power", "requires":["nuclear fission","electronics"]},
+	
+	{"name":"philosophy", "requires":["mysticism","literacy"]},
+	{"name":"physics", "requires":["mathematics","navigation"]},
+	{"name":"plastics", "requires":["refining","spaceflight"]},
+	{"name":"pottery", "requires":"none"},
+	
+	{"name":"railroad", "requires":["steam engine","bridge building"]},
+	{"name":"recycling", "requires":["mass production","democracy"]},
+	{"name":"refining", "requires":["chemistry","the corporation"]},
+	{"name":"religion", "requires":["philosophy","writing"]},
+	{"name":"the republic", "requires":["code of laws","literacy"]},
+	{"name":"robotics", "requires":["plastics","computers"]},
+	{"name":"rocketry", "requires":["advanced flight","electronics"]},
+	
+	{"name":"space flight", "requires":["computers","rocketry"]},
+	{"name":"steam engine", "requires":["physics","invention"]},
+	{"name":"steel", "requires":["metallurgy","industrialisation"]},
+	{"name":"superconductor", "requires":["plastics","mass production"]},
+	
+	{"name":"theory of gravity", "requires":["astronomy","university"]},
+	{"name":"trade", "requires":["currency","code of laws"]},
+	
+	{"name":"university", "requires":["mathematics","philosophy"]},
+	
+	{"name":"the wheel", "requires":"none"},
+	{"name":"writing", "requires":"alphabet"}
+]

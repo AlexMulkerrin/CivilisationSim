@@ -1,0 +1,25 @@
+[
+	{"name":"The Colossus", "cost":200, "effect":"1 extra trade", "required advance":"bronze working", "obsoleted":"electricity"},
+	{"name":"The Great Library", "cost":300, "effect":"learn known by two", "required advance":"literacy", "obsoleted":"university"},
+	{"name":"The Great Wall", "cost":300, "effect":"always offer peace", "required advance":"masonry", "obsoleted":"gunpowder"},
+	{"name":"The Hanging Gardens", "cost":300, "effect":"1 happy", "required advance":"pottery", "obsoleted":"invention"},
+	{"name":"The Lighthouse", "cost":200, "effect":"1 ship movement", "required advance":"mapmaking", "obsoleted":"magnetism"},
+	{"name":"Oracle", "cost":300, "effect":"200% temple effect", "required advance":"mysticism", "obsoleted":"religion"},
+	{"name":"The Pyramids", "cost":300, "effect":["no anarchy","all government"], "required advance":"masonry", "obsoleted":"communism"},
+	
+	{"name":"Copernicus' Observatory", "cost":300, "effect":"200% research", "required advance":"astronomy", "obsoleted":"automobile"},
+	{"name":"Darwin's Voyage", "cost":300, "effect":"2 advances", "required advance":"railroad", "obsoleted":"none"},
+	{"name":"Isaac Newton's College", "cost":400, "effect":["166% increase on library","166% increase on library"], "required advance":"theory of gravity", "obsoleted":"nuclear fission"},
+	{"name":"J.S.Bach's Cathedral", "cost":400, "effect":"2 content", "required advance":"religion", "obsoleted":"none"},
+	{"name":"Magellan's Expedition", "cost":400, "effect":"1 ship movement", "required advance":"navigation", "obsoleted":"none"},
+	{"name":"Michelangelo's Chapel", "cost":300, "effect":"150% increase on cathedral", "required advance":"religion", "obsoleted":"communism"},
+	{"name":"Shakespeare's Theater", "cost":400, "effect":"no unhappy", "required advance":"medicine", "obsoleted":"electronics"},
+	
+	{"name":"Apollo Program", "cost":600, "effect":["see all cities","build spaceship"], "required advance":"spaceflight"},
+	{"name":"Cure for Cancer", "cost":600, "effect":"1 happy", "required advance":"genetic engineering"},
+	{"name":"Hoover Dam", "cost":600, "effect":"hydro plant across continent", "required advance":"electronics"},
+	{"name":"Manhatten Project", "cost":600, "effect":"unlocks nuclear", "required advance":"nuclear fission"},
+	{"name":"SETI Program", "cost":600, "effect":"150% research", "required advance":"computers"},
+	{"name":"United Nations", "cost":600, "effect":"always offer peace", "required advance":"communism"},
+	{"name":"Women's Suffrage", "cost":600, "effect":"1 less war weariness", "required advance":"industrialisation"}
+]

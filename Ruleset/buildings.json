@@ -1,0 +1,23 @@
+[
+	{"name":"Aqueduct", "cost":120, "maintenance":2, "effect":"exceed 10 population", "required advance":"construction"},
+	{"name":"Bank", "cost":120, "maintenance":3, "effect":["50% taxes","50% luxuries"], "required advance":"banking"},
+	{"name":"Barracks", "cost":40, "maintenance":0, "effect":"veterans", "required advance":"none", "obsoleted":["combustion","gunpowder"]},
+	{"name":"Cathedral", "cost":160, "maintenance":3, "effect":"4 content", "required advance":"religion"},
+	{"name":"City Walls", "cost":120, "maintenance":2, "effect":["300% defence","no civilian casualties"], "required advance":"masonry"},
+	{"name":"Colosseum", "cost":100, "maintenance":4, "effect":"3 content", "required advance":"construction"},
+	{"name":"Courthouse", "cost":80, "maintenance":1, "effect":"50% less corruption", "required advance":"code of laws"},
+	{"name":"Factory", "cost":200, "maintenance":4, "effect":"50% population", "required advance":"industrialisation"},
+	{"name":"Granary", "cost":60, "maintenance":1, "effect":"save 50% food", "required advance":"pottery"},
+	{"name":"Hydro Plant", "cost":240, "maintenance":4, "effect":["50% production","less pollution"], "required advance":"electronics"},
+	{"name":"Library", "cost":80, "maintenance":1, "effect":"50% research", "required advance":"writing"},
+	{"name":"Marketplace", "cost":80, "maintenance":1, "effect":["50% taxes","50% luxuries"], "required advance":"currency"},
+	{"name":"Mass Transit", "cost":160, "maintenance":4, "effect":"no population pollution", "required advance":"mass production"},
+	{"name":"Mfg. Plant", "cost":320, "maintenance":6, "effect":"100% production", "required advance":"robotics"},
+	{"name":"Nuclear Plant", "cost":160, "maintenance":2, "effect":["50% production","low pollution","meltdown risk"], "required advance":"nuclear power"},
+	{"name":"Palace", "cost":200, "maintenance":5, "effect":"capital", "required advance":"masonry"},
+	{"name":"Power Plant", "cost":160, "maintenance":4, "effect":["50% production","high pollution"], "required advance":"refining"},
+	{"name":"Recycling Center", "cost":200, "maintenance":2, "effect":"67% less industry pollution", "required advance":"recycling"},
+	{"name":"SDI Defence", "cost":200, "maintenance":4, "effect":"nuclear defence", "required advance":"superconductor"},
+	{"name":"Temple", "cost":40, "maintenance":1, "effect":"1 content", "required advance":"ceremonial burial"},
+	{"name":"University", "cost":160, "maintenance":3, "effect":"50% research", "required advance":"university"}
+]

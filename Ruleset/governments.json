@@ -1,0 +1,8 @@
+[
+	{"name":"Anarchy", "effect":["temporary","food cap 2","population support","no government","1 less settler food cost"], "required advance":"none"},
+	{"name":"Despotism", "effect":["food cap 2","population support","1 less settler food cost"], "required advance":"none"},
+	{"name":"Monarchy", "effect":"none", "required advance":"monarchy"},
+	{"name":"Communism", "effect":["flat corruption"], "required advance":"labour union"},
+	{"name":"Republic", "effect":["1 extra trade","1 war weariness"], "required advance":"the republic"},
+	{"name":"Democracy", "effect":["1 extra trade","2 war weariness","collapse with rebellion", "no corruption", "senate peace treaty"], "required advance":"democracy"}
+]
